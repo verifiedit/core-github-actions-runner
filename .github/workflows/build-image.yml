@@ -1,0 +1,19 @@
+---
+name: Build github-runners-action
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  build-image:
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build image
+        run: |
+          docker build -t ghcr.io/verifiedit/github-actions-runner:latest .
+          docker login https://ghcr.io -u ${GITHUB_ACTOR} -p ${GITHUB_TOKEN}
+          docker push ghcr.io/verifiedit/github-actions-runner:latest
