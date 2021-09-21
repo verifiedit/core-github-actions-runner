@@ -8,7 +8,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install software-properties-common \
     && add-apt-repository ppa:ondrej/php \
     && apt-get update \
     && apt-get install -y php8.0 git zip unzip \
-    && pip install ansible \
+    && pip install ansible boto3 boto \
     && curl -sS --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 WORKDIR /home/runner
