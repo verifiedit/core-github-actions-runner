@@ -2,7 +2,9 @@
 name: Build github-runners-action
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
     
 jobs:
   build-image:
