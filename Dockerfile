@@ -19,6 +19,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install software-properties-common \
 
 COPY scripts/install-runner /usr/local/bin/install-runner
 
+RUN chmod +x /usr/local/bin/install-runner
+
 WORKDIR /home/runner
 
 USER runner
