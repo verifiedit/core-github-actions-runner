@@ -23,8 +23,8 @@ RUN chmod +x /usr/local/bin/install-runner
 
 WORKDIR /home/runner
 
-RUN mkdir ~/.kube
-
 USER runner
+
+RUN mkdir ~/.kube
 
 ENTRYPOINT ["/entrypoint.sh"]
