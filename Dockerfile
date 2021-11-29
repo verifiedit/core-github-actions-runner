@@ -25,6 +25,4 @@ WORKDIR /home/runner
 
 USER runner
 
-RUN mkdir ~/.kube
-
 ENTRYPOINT ["/entrypoint.sh"]
