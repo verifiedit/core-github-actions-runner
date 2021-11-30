@@ -15,7 +15,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install software-properties-common \
     curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \
     install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl && \
     curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator && \
-    chmod +x aws-iam-authenticator && mv aws-iam-authenticator /usr/local/bin
+    chmod +x aws-iam-authenticator && mv aws-iam-authenticator /usr/local/bin && \
+    curl --silent --location "https://get.helm.sh/helm-v3.7.1-linux-amd64.tar.gz" | tar xz -C /tmp && \
+    mv /tmp/helm /usr/local/bin
 
 COPY scripts/install-runner /usr/local/bin/install-runner
 
