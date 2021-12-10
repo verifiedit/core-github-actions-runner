@@ -7,7 +7,7 @@ USER root
 RUN DEBIAN_FRONTEND=noninteractive apt-get install software-properties-common \
     && add-apt-repository ppa:ondrej/php \
     && apt-get update \
-    && apt-get install -y php8.1 git zip unzip \
+    && apt-get install -y php8.1 php8.1-xmlwriter git zip unzip \
     && pip install ansible boto3 boto netaddr kubernetes \
     && curl -sS --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz" | tar xz -C /tmp && \
