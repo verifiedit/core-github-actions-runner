@@ -18,6 +18,8 @@ fi
 
 sudo install-runner
 
+sudo rm -rf /home/runner/_work/*
+
 # Reconfigure from the clean state in case of runner failures/restarts
 #./config.sh remove --token "${RUNNER_TOKEN}"
 ./config.sh --unattended --url "${RUNNER_URL}" --token "${RUNNER_TOKEN}" --ephemeral --replace
