@@ -1,4 +1,4 @@
-FROM quay.io/evryfs/github-actions-runner:latest
+FROM quay.io/evryfs/github-actions-runner:master
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
